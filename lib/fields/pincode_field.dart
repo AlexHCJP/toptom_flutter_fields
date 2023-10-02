@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class ToptomPincodeField extends StatelessWidget {
@@ -18,7 +19,9 @@ class ToptomPincodeField extends StatelessWidget {
       controller: controller,
       length: 6,
       keyboardType: TextInputType.number,
-      inputFormatters: [],
+      inputFormatters: [
+        FilteringTextInputFormatter.digitsOnly
+      ],
       pinTheme: PinTheme.defaults(
         activeColor: Theme.of(context).colorScheme.primary,
         selectedColor: Theme.of(context).colorScheme.primary,
