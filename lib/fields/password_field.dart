@@ -26,10 +26,12 @@ class ToptomPasswordField extends StatelessWidget {
         const SizedBox(height: 5),
         SizedBox(
           child: TextField(
+
             controller: controller,
             obscureText: true,
             obscuringCharacter: '*',
             decoration: InputDecoration(
+              contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
               border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10)
               ),

@@ -5,13 +5,13 @@ import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import '../top_field.dart';
 
 class ToptomPhoneField extends StatelessWidget {
-  final TextEditingController controller;
+  final TextEditingController? controller;
   final String? label;
   final bool isRequired;
 
   ToptomPhoneField({
     super.key,
-    required this.controller,
+    this.controller,
     this.label,
     this.isRequired = false,
   });
@@ -36,6 +36,8 @@ class ToptomPhoneField extends StatelessWidget {
             inputFormatters: [_maskFormatter],
             keyboardType: TextInputType.phone,
             decoration: InputDecoration(
+              // isDense: true,
+              contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
               border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10)
               ),

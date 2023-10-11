@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 import '../top_field.dart';
 
 class ToptomDescriptionField extends StatelessWidget {
-  final TextEditingController controller;
+  final TextEditingController? controller;
   final String? label;
   final bool isRequired;
 
   const ToptomDescriptionField({
     super.key,
-    required this.controller,
+    this.controller,
     this.label,
     this.isRequired = false
   });
@@ -27,6 +27,7 @@ class ToptomDescriptionField extends StatelessWidget {
             controller: controller,
             maxLines: 5,
             decoration: InputDecoration(
+              contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
               border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10)
               ),

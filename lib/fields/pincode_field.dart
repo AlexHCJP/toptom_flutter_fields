@@ -28,6 +28,7 @@ class ToptomPincodeField extends StatelessWidget {
         inactiveColor: Theme.of(context).colorScheme.primary,
         disabledColor: Theme.of(context).colorScheme.primary,
         shape: PinCodeFieldShape.box,
+
         borderRadius: BorderRadius.circular(10)
       ),
     );

@@ -38,6 +38,7 @@ class ToptomNumberField extends StatelessWidget {
             ],
             decoration: InputDecoration(
               suffixIcon: icon,
+              contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
               border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10)
               ),
