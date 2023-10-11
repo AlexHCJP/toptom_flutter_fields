@@ -28,7 +28,6 @@ class ToptomTextField extends StatelessWidget {
         if(label != null) TopField(label: label!, isRequired: isRequired),
         const SizedBox(height: 5),
         SizedBox(
-          height: 55,
           child: TextField(
             onSubmitted: onSubmit,
             controller: controller,
