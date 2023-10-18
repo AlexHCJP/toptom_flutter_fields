@@ -8,7 +8,8 @@ class ToptomNumberField extends StatelessWidget {
   final TextEditingController? controller;
   final String? label;
   final bool isRequired;
-  final Widget? icon;
+  final Widget? suffixIcon;
+  final Widget? prefixIcon;
   final Function(String)? onSubmit;
 
   const ToptomNumberField({
@@ -16,8 +17,9 @@ class ToptomNumberField extends StatelessWidget {
     this.controller,
     this.label,
     this.isRequired = false,
-    this.icon,
-    this.onSubmit
+    this.suffixIcon,
+    this.onSubmit,
+    this.prefixIcon
   });
 
 
@@ -37,7 +39,8 @@ class ToptomNumberField extends StatelessWidget {
               FilteringTextInputFormatter.digitsOnly
             ],
             decoration: InputDecoration(
-              suffixIcon: icon,
+              prefixIcon: prefixIcon,
+              suffixIcon: suffixIcon,
               contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
               border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10)

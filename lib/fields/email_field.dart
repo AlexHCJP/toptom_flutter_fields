@@ -7,7 +7,9 @@ class ToptomEmailField extends StatelessWidget {
   final TextEditingController? controller;
   final String? label;
   final bool isRequired;
-  final Widget? icon;
+  final Widget? suffixIcon;
+  final Widget? prefixIcon;
+  
   final Function(String)? onSubmit;
 
   const ToptomEmailField({
@@ -15,7 +17,8 @@ class ToptomEmailField extends StatelessWidget {
     this.controller,
     this.label,
     this.isRequired = false,
-    this.icon,
+    this.suffixIcon,
+    this.prefixIcon,
     this.onSubmit
   });
 
@@ -33,7 +36,8 @@ class ToptomEmailField extends StatelessWidget {
             onSubmitted: onSubmit,
             controller: controller,
             decoration: InputDecoration(
-              suffixIcon: icon,
+              prefixIcon: prefixIcon,
+              suffixIcon: suffixIcon,
               contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
               border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10)
