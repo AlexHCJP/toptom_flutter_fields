@@ -36,8 +36,8 @@ class ToptomEmailField extends StatelessWidget {
             onSubmitted: onSubmit,
             controller: controller,
             decoration: InputDecoration(
-              prefixIcon: prefixIcon,
-              suffixIcon: suffixIcon,
+              prefix: prefixIcon,
+              suffix: suffixIcon,
               contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
               border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10)
