@@ -44,7 +44,13 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             ToptomTextField(
-              icon: Icon(Icons.search),
+              prefixIcon: Text('От'),
+              suffixIcon: Text('До'),
+
+            ),
+            ToptomTextField(
+              prefixIcon: Text('До'),
+              suffixIcon: Text('До'),
             ),
             ToptomDescriptionField(),
             ToptomEmailField(),
