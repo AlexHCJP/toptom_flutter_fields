@@ -12,7 +12,7 @@ class ToptomPasswordField extends StatelessWidget {
   const ToptomPasswordField(
       {super.key,
       required this.controller,
-      required this.label,
+      this.label,
       this.isRequired = false,
       this.hintText});
 
