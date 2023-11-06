@@ -6,10 +6,11 @@ import '../top_field.dart';
 class ToptomEmailField extends StatelessWidget {
   final TextEditingController? controller;
   final String? label;
+  final String? hintText;
   final bool isRequired;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
-  
+
   final Function(String)? onSubmit;
 
   const ToptomEmailField({
@@ -19,16 +20,16 @@ class ToptomEmailField extends StatelessWidget {
     this.isRequired = false,
     this.suffixIcon,
     this.prefixIcon,
-    this.onSubmit
+    this.onSubmit,
+    this.hintText,
   });
-
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        if(label != null) TopField(label: label!, isRequired: isRequired),
+        if (label != null) TopField(label: label!, isRequired: isRequired),
         const SizedBox(height: 5),
         SizedBox(
           child: TextField(
@@ -36,17 +37,15 @@ class ToptomEmailField extends StatelessWidget {
             onSubmitted: onSubmit,
             controller: controller,
             decoration: InputDecoration(
+              hintText: hintText,
               prefix: prefixIcon,
               suffix: suffixIcon,
-              contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
-              border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10)
-              ),
+              contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
+              border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
             ),
           ),
         ),
       ],
     );
   }
-
 }

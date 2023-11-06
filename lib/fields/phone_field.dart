@@ -7,6 +7,7 @@ import '../top_field.dart';
 class ToptomPhoneField extends StatelessWidget {
   final TextEditingController? controller;
   final String? label;
+  final String? hintText;
   final bool isRequired;
 
   ToptomPhoneField({
@@ -14,21 +15,21 @@ class ToptomPhoneField extends StatelessWidget {
     this.controller,
     this.label,
     this.isRequired = false,
+    this.hintText,
   });
 
   final _maskFormatter = MaskTextInputFormatter(
-      mask: '+###########',
-      filter: { "#": RegExp(r'[0-9]') },
-      type: MaskAutoCompletionType.lazy
+    mask: '+###########',
+    filter: {"#": RegExp(r'[0-9]')},
+    type: MaskAutoCompletionType.lazy,
   );
-
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        if(label != null) TopField(label: label!, isRequired: isRequired),
+        if (label != null) TopField(label: label!, isRequired: isRequired),
         const SizedBox(height: 5),
         SizedBox(
           child: TextField(
@@ -37,10 +38,9 @@ class ToptomPhoneField extends StatelessWidget {
             keyboardType: TextInputType.phone,
             decoration: InputDecoration(
               // isDense: true,
-              contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
-              border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10)
-              ),
+              hintText: hintText,
+              contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
+              border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
             ),
           ),
         ),

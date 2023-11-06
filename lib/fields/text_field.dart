@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../top_field.dart';
@@ -6,6 +5,7 @@ import '../top_field.dart';
 class ToptomTextField extends StatelessWidget {
   final TextEditingController? controller;
   final String? label;
+  final String? hintText;
   final bool isRequired;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
@@ -18,7 +18,7 @@ class ToptomTextField extends StatelessWidget {
     this.isRequired = false,
     this.suffixIcon,
     this.prefixIcon,
-    this.onSubmit
+    this.onSubmit, this.hintText
   });
 
 
@@ -36,7 +36,8 @@ class ToptomTextField extends StatelessWidget {
             decoration: InputDecoration(
               prefix: prefixIcon,
               suffix: suffixIcon,
-              contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
+              hintText: hintText,
+              contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
               border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10)
               ),
