@@ -29,18 +29,16 @@ class ToptomTextField extends StatelessWidget {
       children: [
         if(label != null) TopField(label: label!, isRequired: isRequired),
         const SizedBox(height: 5),
-        SizedBox(
-          child: TextField(
-            onSubmitted: onSubmit,
-            controller: controller,
-            decoration: InputDecoration(
-              prefix: prefixIcon,
-              suffix: suffixIcon,
-              hintText: hintText,
-              contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
-              border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8)
-              ),
+        TextField(
+          onSubmitted: onSubmit,
+          controller: controller,
+          decoration: InputDecoration(
+            prefix: prefixIcon,
+            suffix: suffixIcon,
+            hintText: hintText,
+            contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
+            border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8)
             ),
           ),
         ),
