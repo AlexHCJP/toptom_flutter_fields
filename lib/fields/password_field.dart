@@ -47,7 +47,7 @@ class _ToptomPasswordFieldState extends State<ToptomPasswordField> {
               border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
               suffixIcon: GestureDetector(
                 onTap: () => setState(() => obscureText = !obscureText),
-                child: SvgPicture.asset(obscureText ? widget.visibilityIcon : widget.visibilityOffIcon, fit: BoxFit.scaleDown),
+                child: SvgPicture.asset(obscureText ? widget.visibilityOffIcon : widget.visibilityIcon, fit: BoxFit.scaleDown),
               ),
             ),
           ),
