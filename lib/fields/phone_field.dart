@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
@@ -19,7 +18,7 @@ class ToptomPhoneField extends StatelessWidget {
   });
 
   final _maskFormatter = MaskTextInputFormatter(
-    mask: '+###########',
+    mask: '+7 (###) ###-##-##',
     filter: {"#": RegExp(r'[0-9]')},
     type: MaskAutoCompletionType.lazy,
   );
@@ -40,7 +39,7 @@ class ToptomPhoneField extends StatelessWidget {
               // isDense: true,
               hintText: hintText,
               contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
-              border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+              border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
             ),
           ),
         ),

@@ -28,7 +28,7 @@ class ToptomDescriptionField extends StatelessWidget {
         decoration: InputDecoration(
           hintText: hintText,
           contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
         ),
       )
     ]);

@@ -41,7 +41,7 @@ class ToptomEmailField extends StatelessWidget {
               prefix: prefixIcon,
               suffix: suffixIcon,
               contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
-              border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+              border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
             ),
           ),
         ),

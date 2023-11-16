@@ -42,7 +42,7 @@ class ToptomNumberField extends StatelessWidget {
               suffix: suffixIcon,
               hintText: hintText,
               contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
-              border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+              border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
             ),
           ),
         ),

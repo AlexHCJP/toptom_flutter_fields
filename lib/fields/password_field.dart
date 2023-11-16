@@ -31,7 +31,7 @@ class ToptomPasswordField extends StatelessWidget {
             decoration: InputDecoration(
               hintText: hintText,
               contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
-              border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+              border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
             ),
           ),
         ),
