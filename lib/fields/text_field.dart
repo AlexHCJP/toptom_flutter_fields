@@ -33,8 +33,8 @@ class ToptomTextField extends StatelessWidget {
           onSubmitted: onSubmit,
           controller: controller,
           decoration: InputDecoration(
-            prefix: prefixIcon,
-            suffix: suffixIcon,
+            prefixIcon: prefixIcon,
+            suffixIcon: suffixIcon,
             hintText: hintText,
             contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
             border: OutlineInputBorder(
