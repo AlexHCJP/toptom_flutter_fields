@@ -38,7 +38,10 @@ class ToptomNumberField extends StatelessWidget {
             keyboardType: TextInputType.number,
             inputFormatters: [FilteringTextInputFormatter.digitsOnly],
             decoration: InputDecoration(
-              prefix: prefixIcon,
+              prefix: Padding(
+                padding: const EdgeInsets.only(right: 5),
+                child: prefixIcon,
+              ),
               suffix: suffixIcon,
               hintText: hintText,
               contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
