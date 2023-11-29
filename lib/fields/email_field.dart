@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../top_field.dart';
 
-class ToptomEmailField extends StatelessWidget {
+class ToptomEmailField extends StatefulWidget {
   final TextEditingController? controller;
   final String? label;
   final String? hintText;
@@ -12,6 +12,7 @@ class ToptomEmailField extends StatelessWidget {
   final Widget? prefixIcon;
 
   final Function(String)? onSubmit;
+
 
   const ToptomEmailField({
     super.key,
@@ -25,21 +26,27 @@ class ToptomEmailField extends StatelessWidget {
   });
 
   @override
+  State<ToptomEmailField> createState() => _ToptomEmailFieldState();
+}
+
+class _ToptomEmailFieldState extends State<ToptomEmailField> {
+
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        if (label != null) TopField(label: label!, isRequired: isRequired),
+        if (widget.label != null) TopField(label: widget.label!, isRequired: widget.isRequired),
         const SizedBox(height: 5),
         SizedBox(
           child: TextField(
             keyboardType: TextInputType.emailAddress,
-            onSubmitted: onSubmit,
-            controller: controller,
+            onSubmitted: widget.onSubmit,
+            controller: widget.controller,
             decoration: InputDecoration(
-              hintText: hintText,
-              prefix: prefixIcon,
-              suffix: suffixIcon,
+              hintText: widget.hintText,
+              prefix: widget.prefixIcon,
+              suffix: widget.suffixIcon,
               contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
               enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8),
