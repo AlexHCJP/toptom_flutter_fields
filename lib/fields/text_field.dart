@@ -27,7 +27,6 @@ class ToptomTextField extends StatefulWidget {
 }
 
 class _ToptomTextFieldState extends State<ToptomTextField> {
-  final FocusNode _focusNode = FocusNode();
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -36,15 +35,8 @@ class _ToptomTextFieldState extends State<ToptomTextField> {
         if (widget.label != null) TopField(label: widget.label!, isRequired: widget.isRequired),
         const SizedBox(height: 5),
         TextField(
-          focusNode: _focusNode,
           onSubmitted: widget.onSubmit,
           controller: widget.controller,
-          onTap: () {
-            if (!_focusNode.hasFocus) {
-
-              FocusScope.of(context).requestFocus(_focusNode);
-            }
-          },
           decoration: InputDecoration(
             prefixIcon: widget.prefixIcon,
             suffixIcon: widget.suffixIcon,
