@@ -22,7 +22,7 @@ class ToptomPhoneField extends StatelessWidget {
   final _maskFormatter = MaskTextInputFormatter(
       mask: '+# (###) ###-##-##',
       filter: {"#": RegExp(r'[0-9]')},
-      initialText: '+7',
+      initialText: '7',
       type: MaskAutoCompletionType.lazy
   );
 
