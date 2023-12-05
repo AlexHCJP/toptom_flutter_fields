@@ -19,11 +19,13 @@ class ToptomPhoneField extends StatelessWidget {
     this.prefixIcon,
   });
 
-  final _maskFormatter = MaskTextInputFormatter(
-    mask: '+7 (###) ###-##-##',
-    filter: {"#": RegExp(r'[0-9]')},
-    type: MaskAutoCompletionType.lazy,
+  final maskFormatter = MaskTextInputFormatter(
+      mask: '+# (###) ###-##-##',
+      filter: {"#": RegExp(r'[0-9]')},
+      initialText: '+7',
+      type: MaskAutoCompletionType.lazy
   );
+
 
   @override
   Widget build(BuildContext context) {
