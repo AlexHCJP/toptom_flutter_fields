@@ -8,6 +8,7 @@ class ToptomPhoneField extends StatelessWidget {
   final String? label;
   final String? hintText;
   final bool isRequired;
+  final Widget? prefixIcon;
 
   ToptomPhoneField({
     super.key,
@@ -15,6 +16,7 @@ class ToptomPhoneField extends StatelessWidget {
     this.label,
     this.isRequired = false,
     this.hintText,
+    this.prefixIcon,
   });
 
   final _maskFormatter = MaskTextInputFormatter(
@@ -36,6 +38,7 @@ class ToptomPhoneField extends StatelessWidget {
             inputFormatters: [_maskFormatter],
             keyboardType: TextInputType.phone,
             decoration: InputDecoration(
+              prefixIcon: prefixIcon,
               // isDense: true,
               hintText: hintText,
               contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
