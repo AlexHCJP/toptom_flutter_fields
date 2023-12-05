@@ -19,7 +19,7 @@ class ToptomPhoneField extends StatelessWidget {
     this.prefixIcon,
   });
 
-  final maskFormatter = MaskTextInputFormatter(
+  final _maskFormatter = MaskTextInputFormatter(
       mask: '+# (###) ###-##-##',
       filter: {"#": RegExp(r'[0-9]')},
       initialText: '+7',
