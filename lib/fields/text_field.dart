@@ -32,8 +32,7 @@ class _ToptomTextFieldState extends State<ToptomTextField> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        if (widget.label != null) TopField(label: widget.label!, isRequired: widget.isRequired),
-        const SizedBox(height: 5),
+        if (widget.label != null) ...[TopField(label: widget.label!, isRequired: widget.isRequired), const SizedBox(height: 5)],
         TextField(
           onSubmitted: widget.onSubmit,
           controller: widget.controller,
