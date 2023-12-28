@@ -10,6 +10,7 @@ class ToptomTextField extends StatefulWidget {
   final Widget? suffixIcon;
   final Widget? prefixIcon;
   final Function(String)? onSubmit;
+  final int? maxLength;
 
   const ToptomTextField({
     super.key,
@@ -19,7 +20,7 @@ class ToptomTextField extends StatefulWidget {
     this.suffixIcon,
     this.prefixIcon,
     this.onSubmit,
-    this.hintText
+    this.hintText, this.maxLength
   });
 
   @override
@@ -36,6 +37,7 @@ class _ToptomTextFieldState extends State<ToptomTextField> {
         TextField(
           onSubmitted: widget.onSubmit,
           controller: widget.controller,
+          maxLength: widget.maxLength,
           decoration: InputDecoration(
             prefixIcon: widget.prefixIcon,
             suffixIcon: widget.suffixIcon,
