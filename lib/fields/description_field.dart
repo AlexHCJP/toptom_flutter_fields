@@ -10,6 +10,7 @@ class ToptomDescriptionField extends StatelessWidget {
   final bool isRequired;
   final int? maxLength;
   final Color? color;
+  final TextStyle? hintStyle;
 
   const ToptomDescriptionField({
     super.key,
@@ -19,6 +20,7 @@ class ToptomDescriptionField extends StatelessWidget {
     this.hintText,
     this.maxLength,
     this.color,
+    this.hintStyle,
   });
 
   @override
@@ -32,6 +34,7 @@ class ToptomDescriptionField extends StatelessWidget {
         maxLength: maxLength,
         decoration: InputDecoration(
           hintText: hintText,
+          hintStyle: hintStyle,
           contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
           enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8), borderSide: BorderSide(color:color ?? const Color.fromRGBO(232, 232, 232, 1), width: 1.5)),
