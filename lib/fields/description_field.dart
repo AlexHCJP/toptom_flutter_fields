@@ -8,6 +8,7 @@ class ToptomDescriptionField extends StatelessWidget {
   final String? label;
   final String? hintText;
   final bool isRequired;
+  final int? maxLength;
 
   const ToptomDescriptionField({
     super.key,
@@ -15,6 +16,7 @@ class ToptomDescriptionField extends StatelessWidget {
     this.label,
     this.isRequired = false,
     this.hintText,
+    this.maxLength,
   });
 
   @override
@@ -25,6 +27,7 @@ class ToptomDescriptionField extends StatelessWidget {
       TextField(
         controller: controller,
         maxLines: 5,
+        maxLength: maxLength,
         decoration: InputDecoration(
           hintText: hintText,
           contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
