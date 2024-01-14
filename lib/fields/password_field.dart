@@ -5,7 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../top_field.dart';
 
 class ToptomPasswordField extends StatefulWidget {
-  final TextEditingController controller;
+  final TextEditingController? controller;
   final String? label;
   final String? hintText;
   final bool isRequired;
@@ -14,7 +14,7 @@ class ToptomPasswordField extends StatefulWidget {
 
   const ToptomPasswordField({
     super.key,
-    required this.controller,
+    this.controller,
     this.label,
     this.isRequired = false,
     this.hintText,
