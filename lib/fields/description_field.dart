@@ -11,6 +11,7 @@ class ToptomDescriptionField extends StatelessWidget {
   final int? maxLength;
   final Color? color;
   final TextStyle? hintStyle;
+  final bool? enabled;
 
   const ToptomDescriptionField({
     super.key,
@@ -21,14 +22,18 @@ class ToptomDescriptionField extends StatelessWidget {
     this.maxLength,
     this.color,
     this.hintStyle,
+    this.enabled,
   });
 
   @override
   Widget build(BuildContext context) {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      if (label != null) TopField(label: label!, isRequired: isRequired),
-      const SizedBox(height: 5),
+      if (label != null) ...[
+        TopField(label: label!, isRequired: isRequired),
+        const SizedBox(height: 5),
+      ],
       TextField(
+        enabled: enabled,
         controller: controller,
         maxLines: 5,
         maxLength: maxLength,

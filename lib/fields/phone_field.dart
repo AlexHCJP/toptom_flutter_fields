@@ -9,6 +9,7 @@ class ToptomPhoneField extends StatelessWidget {
   final String? hintText;
   final bool isRequired;
   final Widget? prefixIcon;
+  final bool? enabled;
 
   ToptomPhoneField({
     super.key,
@@ -17,6 +18,7 @@ class ToptomPhoneField extends StatelessWidget {
     this.isRequired = false,
     this.hintText,
     this.prefixIcon,
+    this.enabled
   });
 
   final _maskFormatter = MaskTextInputFormatter(
@@ -32,10 +34,13 @@ class ToptomPhoneField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        if (label != null) TopField(label: label!, isRequired: isRequired),
-        const SizedBox(height: 5),
+        if (label != null) ...[
+          TopField(label: label!, isRequired: isRequired),
+          const SizedBox(height: 5),
+        ],
         SizedBox(
           child: TextField(
+            enabled: enabled,
             controller: controller,
             inputFormatters: [_maskFormatter],
             keyboardType: TextInputType.phone,

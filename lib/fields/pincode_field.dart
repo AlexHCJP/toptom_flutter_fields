@@ -5,16 +5,19 @@ import 'package:pin_code_fields/pin_code_fields.dart';
 
 class ToptomPincodeField extends StatelessWidget {
   final TextEditingController? controller;
+  final bool enabled;
 
   const ToptomPincodeField({
     super.key,
     this.controller,
+    this.enabled = false
   });
 
 
   @override
   Widget build(BuildContext context) {
     return PinCodeTextField(
+      enabled: enabled,
       appContext: context,
       controller: controller,
       length: 6,

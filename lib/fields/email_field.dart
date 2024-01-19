@@ -10,12 +10,14 @@ class ToptomEmailField extends StatefulWidget {
   final bool isRequired;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
+  final bool? enabled;
 
   final Function(String)? onSubmit;
 
 
   const ToptomEmailField({
     super.key,
+    this.enabled,
     this.controller,
     this.label,
     this.isRequired = false,
@@ -40,6 +42,7 @@ class _ToptomEmailFieldState extends State<ToptomEmailField> {
         const SizedBox(height: 5),
         SizedBox(
           child: TextField(
+            enabled: widget.enabled,
             keyboardType: TextInputType.emailAddress,
             onSubmitted: widget.onSubmit,
             controller: widget.controller,

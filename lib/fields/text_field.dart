@@ -11,6 +11,8 @@ class ToptomTextField extends StatefulWidget {
   final Widget? prefixIcon;
   final Function(String)? onSubmit;
   final int? maxLength;
+  final bool? enabled;
+
 
   const ToptomTextField({
     super.key,
@@ -20,7 +22,9 @@ class ToptomTextField extends StatefulWidget {
     this.suffixIcon,
     this.prefixIcon,
     this.onSubmit,
-    this.hintText, this.maxLength
+    this.hintText,
+    this.maxLength,
+    this.enabled
   });
 
   @override
@@ -33,8 +37,11 @@ class _ToptomTextFieldState extends State<ToptomTextField> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        if (widget.label != null) ...[TopField(label: widget.label!, isRequired: widget.isRequired), const SizedBox(height: 5)],
+        if (widget.label != null) ...[
+          TopField(label: widget.label!, isRequired: widget.isRequired), const SizedBox(height: 5)
+        ],
         TextField(
+          enabled: widget.enabled,
           onSubmitted: widget.onSubmit,
           controller: widget.controller,
           maxLength: widget.maxLength,

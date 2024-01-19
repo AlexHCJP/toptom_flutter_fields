@@ -12,6 +12,7 @@ class ToptomNumberField extends StatelessWidget {
   final Widget? suffixIcon;
   final Widget? prefixIcon;
   final Function(String)? onSubmit;
+  final bool? enabled;
 
   const ToptomNumberField({
     super.key,
@@ -22,6 +23,7 @@ class ToptomNumberField extends StatelessWidget {
     this.onSubmit,
     this.prefixIcon,
     this.hintText,
+    this.enabled
   });
 
   @override
@@ -29,10 +31,13 @@ class ToptomNumberField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        if (label != null) TopField(label: label!, isRequired: isRequired),
-        const SizedBox(height: 5),
+        if (label != null) ...[
+          TopField(label: label!, isRequired: isRequired),
+          const SizedBox(height: 5),
+        ],
         SizedBox(
           child: TextField(
+            enabled: enabled,
             onSubmitted: onSubmit,
             controller: controller,
             keyboardType: TextInputType.number,

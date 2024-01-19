@@ -11,6 +11,7 @@ class ToptomPasswordField extends StatefulWidget {
   final bool isRequired;
   final String visibilityIcon;
   final String visibilityOffIcon;
+  final bool? enabled;
 
   const ToptomPasswordField({
     super.key,
@@ -20,6 +21,8 @@ class ToptomPasswordField extends StatefulWidget {
     this.hintText,
     required this.visibilityIcon,
     required this.visibilityOffIcon,
+    this.enabled
+
   });
 
   @override
@@ -34,10 +37,13 @@ class _ToptomPasswordFieldState extends State<ToptomPasswordField> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        if (widget.label != null) TopField(label: widget.label!, isRequired: widget.isRequired),
-        const SizedBox(height: 5),
+        if (widget.label != null) ...[
+          TopField(label: widget.label!, isRequired: widget.isRequired),
+          const SizedBox(height: 5),
+        ],
         SizedBox(
           child: TextField(
+            enabled: widget.enabled,
             controller: widget.controller,
             obscureText: obscureText,
             obscuringCharacter: '*',
