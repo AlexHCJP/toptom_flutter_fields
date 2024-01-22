@@ -10,7 +10,7 @@ class ToptomPincodeField extends StatelessWidget {
   const ToptomPincodeField({
     super.key,
     this.controller,
-    this.enabled = false
+    this.enabled = true
   });
 
 
